@@ -1,4 +1,5 @@
 import prisma from "@/lib/prisma";
+import { DeleteTodoButton } from "./DeleteTodoButton";
 
 export const TodoList = async () => {
   // 全ての Todo データを取得
@@ -13,6 +14,7 @@ export const TodoList = async () => {
             className="flex justify-between items-center p-3 bg-white rounded-lg"
           >
             {todo.title}
+            <DeleteTodoButton id={todo.id} />
           </div>
         );
       })}
